@@ -1,0 +1,10 @@
+
+service Render_Image /system/bin/Render_Image
+    class core
+    user graphics
+    group graphics system
+    disabled
+    oneshot
+
+on late-fs
+    start Render_Image

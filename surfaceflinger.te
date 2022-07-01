@@ -1,0 +1,2 @@
+#============= surfaceflinger ==============
+binder_call(surfaceflinger, Render_Image)

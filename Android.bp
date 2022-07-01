@@ -1,0 +1,51 @@
+//package {
+  //  default_applicable_licenses: ["Android-Apache-2.0"],
+//}
+
+cc_binary {
+    name: "Render_Image",
+    init_rc: ["Render_Image.rc"],
+
+    srcs: [
+        "Main.cpp",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libcutils",
+        "libhidlbase",
+        "libutils",
+        "libhardware",
+        "libui",
+        "libEGL",
+        "libGLESv1_CM",
+        "libGLESv2",
+        "libgui",
+        "libpng",
+    ],
+
+    static_libs: [
+        "libmath",
+        "libglTest",
+    ],
+
+    required: [
+        "Car_Image.png",
+    ],
+    cflags: ["-DLOG_TAG=\"Render_Image\""] + [
+        "-DGL_GLEXT_PROTOTYPES",
+        "-DEGL_EGLEXT_PROTOTYPES",
+    ],
+    include_dirs: [
+        "frameworks/native/opengl/libs",
+        "frameworks/native/opengl/libs/EGL",
+    ],
+}
+
+prebuilt_etc {
+    name: "Car_Image.png",
+
+    src: "CarFromTop.png",
+    sub_dir: "Car_Image",
+}

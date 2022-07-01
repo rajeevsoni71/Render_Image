@@ -1,0 +1,2 @@
+#============= servicemanager ==============
+binder_call(servicemanager, Render_Image)

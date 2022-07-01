@@ -1,0 +1,19 @@
+
+# Render_Image service
+type Render_Image, domain;
+typeattribute Render_Image coredomain;
+type Render_Image_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(Render_Image);
+
+hal_client_domain(Render_Image, hal_configstore)
+hal_client_domain(Render_Image, hal_graphics_allocator)
+hal_client_domain(Render_Image, hal_graphics_composer)
+
+
+binder_use(Render_Image)
+binder_call(Render_Image, surfaceflinger)
+binder_call(Render_Image, servicemanager)
+
+hwbinder_use(Render_Image)
+
+allow Render_Image surfaceflinger_service:service_manager find;

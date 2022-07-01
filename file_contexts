@@ -1,0 +1,3 @@
+# Audio HAL
+/vendor/bin/hw/android\.hardware\.audio\.service-caremu u:object_r:hal_audio_caremu_exec:s0
+/system/bin/Render_Image       u:object_r:Render_Image_exec:s0
